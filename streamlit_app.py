@@ -3,6 +3,7 @@ import streamlit
 import pandas
 import requests
 import snowflake.connector
+from urllib.error import URLError
 
 streamlit.header('My Mom\'s New Healthy Diner')
 streamlit.text('BREAKFAST MENU')
@@ -22,6 +23,7 @@ streamlit.dataframe(my_fruit_list)
 fruits_selected = streamlit.multiselect("Pick Some Fruits:",list(my_fruit_list.index),['Avocado','Strawberries'])
 fruits_to_show = my_fruit_list.loc[fruits_selected]
 streamlit.dataframe(fruits_to_show)
+streamli.stop()
 
 streamlit.header('Fruityvice\'s fruit advice')
 
